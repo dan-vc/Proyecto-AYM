@@ -1,0 +1,64 @@
+#menu-bar {
+    display: none;
+}
+
+.icon-menu {
+    font-size: 50px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.menu {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    transition: all ease .5s;
+    transform: translateX(-100%);
+}
+
+.menu a {
+    display: block;
+    color: #000000;
+    line-height: 100px;
+    text-decoration: none;
+    padding: 0 1rem;
+    border-bottom: 1px solid var(--gray);
+}
+
+.menu>.active{
+    font-weight: bold;
+}
+
+.menu a:hover {
+    background: var(--blue);
+    color: white;
+    transition: all ease .3s;
+}
+
+#menu-bar:checked~.menu {
+    transform: translateX(0%);
+}
+
+@media(min-width:1024px) {
+    .menu {
+        background: transparent;
+        position: static;
+        width: auto;
+        height: auto;
+        transform: translateX(0%);
+        float: right;
+        display: flex;
+        transition: all ease 0s;
+    }
+
+    .menu a {
+        border: none;
+    }
+
+    header label {
+        display: none;
+    }
+}
